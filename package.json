@@ -7,13 +7,13 @@
 		"hostedhooks",
 		"nodejs"
 	],
-	"homepage": "https://github.com/HostedHooks/hostedhooks-node#readme",
+	"homepage": "https://github.com/UniversalStandards/hostedhooks-node#readme",
 	"bugs": {
-		"url": "https://github.com/HostedHooks/hostedhooks-node/issues"
+		"url": "https://github.com/UniversalStandards/hostedhooks-node/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/HostedHooks/hostedhooks-node.git"
+		"url": "git+https://github.com/UniversalStandards/hostedhooks-node.git"
 	},
 	"license": "MIT",
 	"author": "Salim Absi",
