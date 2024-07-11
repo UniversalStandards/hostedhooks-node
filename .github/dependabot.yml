@@ -1,0 +1,168 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+
+version: 2
+
+updates:
+
+  # Maintain dependencies for GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    open-pull-requests-limit: 10
+    allow:
+      - dependency-type: "direct"
+      - dependency-type: "indirect"
+    ignore:
+      - dependency-name: "actions/checkout"
+        versions: ["v2.4.0"]
+      - dependency-name: "actions/setup-node"
+        versions: ["v3.5.0"]
+    # Automatically merge minor and patch updates
+    automerge_minor_and_patch: true
+    # Automatically merge security updates
+    automerge_security_updates: true
+    # Automatically merge updates that pass all checks
+    automerge_when_passing_checks: true
+    # Notify maintainers on failed updates
+    notify_on_failed_update: true
+
+  # Maintain dependencies for npm
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    open-pull-requests-limit: 15
+    allow:
+      - dependency-type: "direct"
+      - dependency-type: "indirect"
+    ignore:
+      - dependency-name: "react"
+        versions: ["17.x"]
+      - dependency-name: "react-dom"
+        versions: ["17.x"]
+      - dependency-name: "webpack"
+        versions: ["5.75.0"]
+    # Automatically merge minor and patch updates
+    automerge_minor_and_patch: true
+    # Automatically merge security updates
+    automerge_security_updates: true
+    # Automatically merge updates that pass all checks
+    automerge_when_passing_checks: true
+    # Notify maintainers on failed updates
+    notify_on_failed_update: true
+    # Assign specific maintainers to review Dependabot PRs
+    assignees:
+      - "john-doe"
+      - "jane-smith"
+
+  # Maintain dependencies for Gradle
+  - package-ecosystem: "gradle"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    allow:
+      - dependency-type: "direct"
+      - dependency-type: "indirect"
+    ignore:
+      - dependency-name: "com.google.guava:guava"
+        versions: ["24.x", "25.x"]
+      - dependency-name: "org.apache.logging.log4j:log4j-to-slf4j"
+        versions: ["2.17.1"]
+    # Automatically merge minor and patch updates
+    automerge_minor_and_patch: true
+    # Automatically merge security updates
+    automerge_security_updates: true
+    # Automatically merge updates that pass all checks
+    automerge_when_passing_checks: true
+    # Notify maintainers on failed updates
+    notify_on_failed_update: true
+    # Require specific status checks to pass before merging
+    required_status_checks:
+      - "build"
+      - "unit-tests"
+
+  # Maintain dependencies for Maven
+  - package-ecosystem: "maven"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    allow:
+      - dependency-type: "direct"
+      - dependency-type: "indirect"
+    ignore:
+      - dependency-name: "com.fasterxml.jackson.*"
+        versions: ["2.9.x"]
+      - dependency-name: "org.springframework:spring-webmvc"
+        versions: ["5.3.22"]
+    # Automatically merge minor and patch updates
+    automerge_minor_and_patch: true
+    # Automatically merge security updates
+    automerge_security_updates: true
+    # Automatically merge updates that pass all checks
+    automerge_when_passing_checks: true
+    # Notify maintainers on failed updates
+    notify_on_failed_update: true
+    # Require specific status checks to pass before merging
+    required_status_checks:
+      - "integration-tests"
+      - "sonar-scan"
+
+  # Maintain dependencies for Composer
+  - package-ecosystem: "composer"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    allow:
+      - dependency-type: "direct"
+      - dependency-type: "indirect"
+    ignore:
+      - dependency-name: "symfony/*"
+        versions: ["5.x"]
+      - dependency-name: "laravel/framework"
+        versions: ["8.83.0"]
+    # Automatically merge minor and patch updates
+    automerge_minor_and_patch: true
+    # Automatically merge security updates
+    automerge_security_updates: true
+    # Automatically merge updates that pass all checks
+    automerge_when_passing_checks: true
+    # Notify maintainers on failed updates
+    notify_on_failed_update: true
+    # Assign specific maintainers to review Dependabot PRs
+    assignees:
+      - "php-expert"
+      - "framework-specialist"
+
+  # Maintain dependencies for Pip
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    allow:
+      - dependency-type: "direct"
+      - dependency-type: "indirect"
+    ignore:
+      - dependency-name: "django"
+        versions: ["3.2.x"]
+      - dependency-name: "numpy"
+        versions: ["1.23.0"]
+    # Automatically merge minor and patch updates
+    automerge_minor_and_patch: true
+    # Automatically merge security updates
+    automerge_security_updates: true
+    # Automatically merge updates that pass all checks
+    automerge_when_passing_checks: true
+    # Notify maintainers on failed updates
+    notify_on_failed_update: true
+    # Require specific status checks to pass before merging
+    required_status_checks:
+      - "unit-tests"
+      - "linting"
